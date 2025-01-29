@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package aggchain;
+
+option go_package = "github.com/temaniarpit27/aggchain";
+
+// Service for generating aggchain proof.
+service AggchainProofService {
+  rpc GenerateAggchainProof(GenerateAggchainProofRequest) returns (GenerateAggchainProofResponse);
+}
+
+// The request message for generating aggchain proof.
+message GenerateAggchainProofRequest {
+  uint64 start_block = 1;
+  uint64 max_end_block = 2;
+}
+
+// The aggchain proof response message.
+message GenerateAggchainProofResponse {
+  bytes aggchain_proof = 1;
+  uint64 start_block = 2;
+  uint64 end_block = 3;
+}
