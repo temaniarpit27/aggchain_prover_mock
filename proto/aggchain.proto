@@ -13,6 +13,9 @@ service AggchainProofService {
 message GenerateAggchainProofRequest {
   uint64 start_block = 1;
   uint64 max_end_block = 2;
+  bytes l1_info_tree_root = 3;
+  bytes l1_info_tree_leaf = 4;
+  repeated bytes l1_info_tree_proof = 5;
 }
 
 // The aggchain proof response message.
